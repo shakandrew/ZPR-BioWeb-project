@@ -1,0 +1,62 @@
+	Piczba pierwsza
+------------------------------------------------------------------------------
+	Autor modyfikacji: Shumak Andrei
+
+	Aplikacja została zrealizowana przy użyciu środowiska bioweb wykonanego przez dr. R. Nowaka
+	http://bioweb.sourceforge.net/en/index.html
+------------------------------------------------------------------------------
+
+OPIS DZIAŁANIA
+------------------------------------------------------------------------------
+Aplikacja jest stosowana do wykrycia, czy podana liczba jest pierwszą lub nie.
+
+Aplikacja wykorzystuje Python(django) + C++(boost) + JavaScript (angularJS)
+
+django 2.0.1
+boost 1.66
+angularJS 1.6.7
+
+INSTALACJA
+------------------------------------------------------------------------------
+Do uruchomienia wymagane są: python, pip, serwer internetowy lighttpd, django.
+
+1)Dla Ubuntu i Debiana:
+	Zainstaluj : lighttpd, boost, boost-libs, virtualenv, pip.
+	Potem w folderze z rozpakowanym projektem odpal:
+
+	# virtualenv -p python3.6 venv
+
+	Za tym w tym samym folderze:
+
+	# source venv/bin/activate
+	# pip install -r requirements.txt
+
+	Dobrze środowisko już mamy, zostało 1 polecenie, żeby zbuildować projekt:
+
+	# scons
+
+2)Dla Windowsa
+	Kieruj się zgodnie z instrukcją środowska bioweb zawartą w pliku OPTIONAL_ENV_SETUP.
+
+TESTOWANIE WOŁANIA BIBLIOTEKI PYTHON
+------------------------------------------------------------------------------
+Przejdź do katalogu build_web/coderpy
+i uruchom interpreter python i wpisz
+>>> import primeness
+I podaj liczbę (ale jako string)
+>>> print(primeness.checkForPrime("10"))
+
+
+TESTOWANIE SERWISU INTERNETOWEGO
+------------------------------------------------------------------------------
+Aby uruchomić serwer ręcznie wywołaj komendę
+	python build_web/manage.py runserver
+lub
+	python build_web/manage.py runserver WEB_CLIENT_HOST:WEB_CLIENT_PORT
+na przykład
+	python build_web/manage.py runserver 127.0.0.1:8000
+		(pod linuksem mogą być wymagane uprawnienia administratora (sudo)
+	W ulubionej przeglądarce wejdź na stronę o adresie WEB_CLIENT_HOST:WEB_CLIENT_PORT (w przypadku przykładu 127.0.0.1:8000)
+Sama aplikacja zawiera się w katalogu "build_web". Można ją stosować wyrzucając pozostałe katalogi poza "client".
+Jednak w celu modyfikacji wszystkie katalogi są potrzebne.
+Należy wtedy zmieniać w nich kod, a po wykonaniu programu scons, katalog "build_web" zostanie zaktualizowany.

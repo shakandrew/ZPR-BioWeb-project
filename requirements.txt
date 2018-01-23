@@ -1,0 +1,4 @@
+Django==2.0.1
+python-devtools==2
+pytz==2017.3
+scons==3.0.1
