@@ -26,16 +26,16 @@ First of all you need installed python3.
   1. Also install : *lighttpd, boost, boost-libs, virtualenv, pip.*
   2. In the project forder:
 
-    ```bash
-    virtualenv -p python3 venv
-    ```
+```bash
+virtualenv -p python3 venv
+```
 
   3. In the same folder do:
 
-    ```bash
-    source venv/bin/activate
-    pip install -r requirements.txt
-    ```
+```bash
+source venv/bin/activate
+pip install -r requirements.txt
+```
 
   4. To build the project run `scons`
 
@@ -47,7 +47,7 @@ First of all you need installed python3.
 Test that Python.Boost built library works correctly.
 -----------------------------------------------------
 Open `build_web/primeness` run `python` :
-```python3
+```python
 import primeness
 
 #Add argument (our number) as string
