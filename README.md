@@ -23,30 +23,31 @@ How to install:
 First of all you need installed python3.
 
 1. Linux:
-  1. Also install : lighttpd, boost, boost-libs, virtualenv, pip.
+  1. Also install : *lighttpd, boost, boost-libs, virtualenv, pip.*
   2. In the project forder:
 
-    `virtualenv -p python3 venv`
+    ```bash
+    virtualenv -p python3 venv
+    ```
 
   3. In the same folder do:
 
-    `source venv/bin/activate`
-
-    `pip install -r requirements.txt`
+    ```bash
+    source venv/bin/activate
+    pip install -r requirements.txt
+    ```
 
   4. To build the project run `scons`
 
     * It's possible, that there mistakes will appear. Please check file `./primeness/SConscript`. Maybe you need to change `LIBPATH` and `CPPPATH`. It relates on your python version.
+2. Windows
 
-
-  2. Windows
-
-    For Windows it's good to download example from frameforks page and look for `OPTIONAL_ENV_SETUP` (Common instruction for BioWeb framefork).
+  For Windows it's good to download example from frameforks page and look for `OPTIONAL_ENV_SETUP` (Common instruction for BioWeb framefork).
 
 Test that Python.Boost built library works correctly.
 -----------------------------------------------------
 Open `build_web/primeness` run `python` :
-```
+```python3
 import primeness
 
 #Add argument (our number) as string
@@ -57,15 +58,21 @@ How to run
 ----------
 To run the serwer, run:
 
-`python build_web/manage.py runserver`
+```bash
+python build_web/manage.py runserver
+```
 
 Or
 
-`python build_web/manage.py runserver WEB_CLIENT_HOST:WEB_CLIENT_PORT`
+```bash
+python build_web/manage.py runserver WEB_CLIENT_HOST:WEB_CLIENT_PORT
+```
 
 For example
 
-`python build_web/manage.py runserver 127.0.0.1:8000`
+```bash
+python build_web/manage.py runserver 127.0.0.1:8000
+```
 
 (Maybe using Linux you will need sudo)
 
